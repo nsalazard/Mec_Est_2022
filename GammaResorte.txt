@@ -1,0 +1,16 @@
+GammaResorte=4.0/60000
+sigma_x(computacional)=4.30696
+sigma_p(computacional)=4.67782
+
+GammaResorte=4.0/30000
+sigma_x(computacional)=3.37998
+sigma_p(computacional)=3.55288
+GammaResorte=4.0/15000
+sigma_x(computacional)=2.47722
+sigma_p(computacional)=2.47183
+GammaResorte=4.0/7500
+sigma_x(computacional)=1.77441
+sigma_p(computacional)=1.70675
+GammaResorte=4.0/3750
+sigma_x(computacional)=1.25809
+sigma_p(computacional)=1.20037
