@@ -239,6 +239,8 @@ int main(void){
 	for(int ii=0; ii <= deltaX+1;ii++){
 		countx = 0;
 		countp = 0;
+		ProbX = 0;
+		ProbPx = 0;
 		xmin = histox[0]+(sigmax*ii);
 		xmax = histox[0]+(sigmax*(ii+1));
 
