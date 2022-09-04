@@ -219,8 +219,8 @@ int main(void){
 	HistoP.open ("HistoP.txt");
 	Prob.open ("Prob.txt");
 	
-	double sigmax =0.5;// 3.37998/5;
-	double sigmap =0.5;//3.55288/5;
+	double sigmax =0.3;// 3.37998/5;
+	double sigmap =0.3;//3.55288/5;
   	double histop[Nmax];
 	double histox[Nmax];
   	for(i=0; i<N; i++){
@@ -280,7 +280,7 @@ int main(void){
 	cout<<"set autoscale"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
-	cout<<"plot 'HistoX.txt' u 1:2 with impulses,'Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
+	cout<<"plot 'HistoX.txt' u 1:2 with impulses t '','Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
 
 	// Histograma Y
 	cout<<"set term pdf"<<endl; 
@@ -291,7 +291,7 @@ int main(void){
 	cout<<"set autoscale"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
-	cout<<"plot 'HistoP.txt' u 1:2 with impulses,'Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
+	cout<<"plot 'HistoP.txt' u 1:2 with impulses t '','Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
 	
   return 0;
 }
