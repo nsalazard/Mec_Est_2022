@@ -12,6 +12,7 @@ const double LAMBDA=-0.2123418310626054;
 const double XI    =-0.06626458266981849;
 const double uno_m2LAMBDA_S2=(1-2*LAMBDA)/2;
 const double uno_m2_XIplusCHI=(1-2*(XI+CHI));
+const double HBAR =1.0;
 
 const int Nmax=810;
 //------------------------- CLASE CUERPO -------------------------------
@@ -98,6 +99,7 @@ int main(void){
   Crandom ran64(0);
   
   //  LOS RESORTES
+  double KBT = 1.0 ;
   Cuerpo Resorte[Nmax];
   double MResorte=1.0, KResorte=1.0, GammaResorte=4.0/30000; // GAMMARESORTE!!!!
   double OmegaResorte=sqrt(MResorte/KResorte);
@@ -247,8 +249,8 @@ int main(void){
 		pmax = histop[0]+(sigmap*(ii+1));
 		
 		for(int jj=0; jj < Nmax;jj++){
-			ProbX = sqrt (2∗M PI∗MResorte∗KBT) ∗exp(−pow( Resorte [ i ] . Getx () ,2) /(2∗KBT/ KResorte ) ) /(HBAR∗KBT∗OmegaResorte );
-			ProbPx =sqrt (2∗M PI∗KBT/KResorte ) ∗ exp(−pow( Resorte [ i ] . GetPx () ,2) /(2∗ MResorte∗KBT) ) /(HBAR∗KBT∗OmegaResorte ) ;
+			ProbX = sqrt (2∗M_PI∗MResorte∗KBT) ∗exp(−pow( Resorte [ i ] . Getx() ,2) /(2∗KBT/ KResorte ) ) /(HBAR∗KBT∗OmegaResorte );
+			ProbPx =sqrt (2∗M_PI∗KBT/KResorte ) ∗ exp(−pow( Resorte [ i ] . GetPx() ,2) /(2∗ MResorte∗KBT) ) /(HBAR∗KBT∗OmegaResorte ) ;
 			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
