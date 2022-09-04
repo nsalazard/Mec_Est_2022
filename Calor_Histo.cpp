@@ -246,9 +246,11 @@ int main(void){
 		pmax = histop[0]+(sigmap*(ii+1));
 		
 		for(int jj=0; jj < Nmax;jj++){
+			if(ii == 0){
 			ProbX = sqrt(2*M_PI*MResorte*KBT)*exp((-1)*pow( histox[jj],2)/(2*KBT/ KResorte ))/(HBAR*KBT*OmegaResorte);
 			ProbPx =sqrt(2*M_PI*KBT/KResorte)*exp((-1)*pow( histop[jj],2)/(2*MResorte*KBT))/(HBAR*KBT*OmegaResorte) ;
 			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
+			}
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
 			}
@@ -276,7 +278,7 @@ int main(void){
 	cout<<"set autoscale"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
-	cout<<"plot 'HistoX.txt' u 1:2 smooth freq with Boxes,'Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
+	cout<<"plot 'HistoX.txt' u 1:2 with impulses,'Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
 
 	// Histograma Y
 	cout<<"set term pdf"<<endl; 
@@ -287,7 +289,7 @@ int main(void){
 	cout<<"set autoscale"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
-	cout<<"plot 'HistoP.txt' u 1:2 smooth freq with Boxes,'Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
+	cout<<"plot 'HistoP.txt' u 1:2 with impulses,'Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
 	
   return 0;
 }
