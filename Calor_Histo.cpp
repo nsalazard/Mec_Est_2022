@@ -235,6 +235,7 @@ int main(void){
 	double deltaX = (histox[Nmax-1] - histox[0])/sigmax;
 	double xmin, xmax, pmin,pmax;
 	int countx, countp;
+	double ProbX, ProbPx;
 
 	for(int ii=0; ii <= deltaX+1;ii++){
 		countx = 0;
