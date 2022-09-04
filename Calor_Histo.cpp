@@ -249,8 +249,8 @@ int main(void){
 		pmax = histop[0]+(sigmap*(ii+1));
 		
 		for(int jj=0; jj < Nmax;jj++){
-			ProbX = sqrt (2∗M_PI∗MResorte∗KBT) ∗exp(−pow( Resorte [ i ] . Getx() ,2) /(2∗KBT/ KResorte ) ) /(HBAR∗KBT∗OmegaResorte );
-			ProbPx =sqrt (2∗M_PI∗KBT/KResorte ) ∗ exp(−pow( Resorte [ i ] . GetPx() ,2) /(2∗ MResorte∗KBT) ) /(HBAR∗KBT∗OmegaResorte ) ;
+			ProbX = sqrt(2∗M_PI∗MResorte∗KBT)∗exp(−pow( histox[jj].Getx(),2)/(2∗KBT/ KResorte ))/(HBAR∗KBT∗OmegaResorte);
+			ProbPx =sqrt(2∗M_PI∗KBT/KResorte)∗exp(−pow( histop[jj].GetPx() ,2)/(2∗MResorte∗KBT))/(HBAR∗KBT∗OmegaResorte) ;
 			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
