@@ -223,8 +223,8 @@ int main(void){
   double histop[Nmax];
 	double histox[Nmax];
   for(i=0; i<N; i++){
-    histox[i] = Resorte[i].GetX;
-		histop[i] = Resorte[i].GetPx;
+    histox[i] = Resorte[i].GetX();
+		histop[i] = Resorte[i].GetPx();
 		}
 
 	std::sort(histox, histox + Nmax);
