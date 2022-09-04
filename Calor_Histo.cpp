@@ -131,7 +131,6 @@ int main(void){
   /*//CORRER LA SIMULACION
   //Inicie Animación
   InicieAnimacion(Xmax, Pmax);
-
     //Graficar estático para ver la condición inicial microcanónica estática
   for(t=0,tdibujo=0; t<tmax; t+=Deltat,tdibujo+=Deltat){
     //Graficar
@@ -196,7 +195,6 @@ int main(void){
   sigma_x=sqrt(x2prom-xprom*xprom);
   //Imprimir sigma_x
   cout<<"sigma_x(computacional)="<<sigma_x<<endl;
-
   
   //Calcular la desviación estándar en xp
   double pprom,p2prom,sigma_p;
@@ -212,7 +210,6 @@ int main(void){
   sigma_p=sqrt(p2prom-pprom*pprom);
   //Imprimir sigma_p
   cout<<"sigma_p(computacional)="<<sigma_p<<endl;
-
 */
 
 	ofstream HistoX;
@@ -249,8 +246,8 @@ int main(void){
 		pmax = histop[0]+(sigmap*(ii+1));
 		
 		for(int jj=0; jj < Nmax;jj++){
-			ProbX = sqrt(2∗M_PI∗MResorte∗KBT)∗exp(−pow( histox[jj].Getx(),2)/(2∗KBT/ KResorte ))/(HBAR∗KBT∗OmegaResorte);
-			ProbPx =sqrt(2∗M_PI∗KBT/KResorte)∗exp(−pow( histop[jj].GetPx() ,2)/(2∗MResorte∗KBT))/(HBAR∗KBT∗OmegaResorte) ;
+			ProbX = sqrt(2*M_PI*MResorte*KBT)*exp((-1)*pow( histox[jj],2)/(2*KBT/ KResorte ))/(HBAR*KBT*OmegaResorte);
+			ProbPx =sqrt(2*M_PI*KBT/KResorte)*exp((-1)*pow( histop[jj],2)/(2*MResorte*KBT))/(HBAR*KBT*OmegaResorte) ;
 			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
