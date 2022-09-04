@@ -223,7 +223,7 @@ int main(void){
   double histop[Nmax];
 	double histox[Nmax];
   for(i=0; i<N; i++){
-    histox[i] = Resorte[i].GetX();
+    histox[i] = Resorte[i].Getx();
 		histop[i] = Resorte[i].GetPx();
 		}
 
