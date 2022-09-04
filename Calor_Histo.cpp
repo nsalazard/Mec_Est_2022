@@ -214,9 +214,9 @@ int main(void){
 */
 
 	ofstream HistoX;
-	ofstream HistoY;
+	ofstream HistoP;
   HistoX.open ("HistoX.txt");
-	HistoY.open ("HistoY.txt");
+	HistoP.open ("HistoP.txt");
 	
 	double sigmax = 3.37998/3;
 	double sigmap =3.55288/3;
@@ -231,7 +231,7 @@ int main(void){
 	std::sort(histop, histop + Nmax);
 
 	double deltaX = (histox[Nmax-1] - histox[0])/sigmax;
-	double xmin, xmax;
+	double xmin, xmax, pmin,pmax;
 	int countx, countp;
 
 	for(int ii=0; ii <= deltaX+1;ii++){
