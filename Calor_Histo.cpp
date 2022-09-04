@@ -215,15 +215,17 @@ int main(void){
 
 	ofstream HistoX;
 	ofstream HistoP;
-  HistoX.open ("HistoX.txt");
+	ofstream Prob;
+  	HistoX.open ("HistoX.txt");
 	HistoP.open ("HistoP.txt");
+	Prob.open ("Prob.txt");
 	
 	double sigmax = 3.37998/3;
 	double sigmap =3.55288/3;
-  double histop[Nmax];
+  	double histop[Nmax];
 	double histox[Nmax];
-  for(i=0; i<N; i++){
-    histox[i] = Resorte[i].Getx();
+  	for(i=0; i<N; i++){
+    		histox[i] = Resorte[i].Getx();
 		histop[i] = Resorte[i].GetPx();
 		}
 
@@ -244,6 +246,9 @@ int main(void){
 		pmax = histop[0]+(sigmap*(ii+1));
 		
 		for(int jj=0; jj < Nmax;jj++){
+			ProbX = sqrt (2∗M PI∗MResorte∗KBT) ∗exp(−pow( Resorte [ i ] . Getx () ,2) /(2∗KBT/ KResorte ) ) /(HBAR∗KBT∗OmegaResorte );
+			ProbPx =sqrt (2∗M PI∗KBT/KResorte ) ∗ exp(−pow( Resorte [ i ] . GetPx () ,2) /(2∗ MResorte∗KBT) ) /(HBAR∗KBT∗OmegaResorte ) ;
+			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
 			}
@@ -255,7 +260,10 @@ int main(void){
 		HistoP << int((pmin+pmax)/2) << "\t" << countp << endl;
 	}
 
+	
 	HistoX.close();
+	HistoP.close();
+	Prob.close();
 	
   return 0;
 }
