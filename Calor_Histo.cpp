@@ -219,8 +219,8 @@ int main(void){
 	HistoP.open ("HistoP.txt");
 	Prob.open ("Prob.txt");
 	
-	double sigmax = 3.37998/3;
-	double sigmap =3.55288/3;
+	double sigmax =0.5;// 3.37998/5;
+	double sigmap =0.5;//3.55288/5;
   	double histop[Nmax];
 	double histox[Nmax];
   	for(i=0; i<N; i++){
@@ -260,8 +260,8 @@ int main(void){
 				countp += 1;
 			}
 				}
-		HistoX << int((xmin+xmax)/2) << "\t" << countx << endl;
-		HistoP << int((pmin+pmax)/2) << "\t" << countp << endl;
+		HistoX << (xmin+xmax)/2 << "\t" << countx << endl;
+		HistoP <<(pmin+pmax)/2 << "\t" << countp << endl;
 	}
 
 	
