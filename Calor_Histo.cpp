@@ -265,5 +265,29 @@ int main(void){
 	HistoP.close();
 	Prob.close();
 	
+	
+	
+ // Histograma X
+	cout<<"set term pdf"<<endl; 
+  cout<<"set out 'HistogramaPosicion.pdf'"<<endl;
+	cout<<"set title 'Histograma de la Posicion'"<<endl;
+  cout<<"set ylabel 'Numero de particulas'"<<endl;
+	cout<<"set xlabel 'Posicion x'"<<endl;
+	cout<<"set autoscale"<<endl;
+	cout<<"set key"<<endl;
+	cout<<"set font ',7'"<<endl;
+	cout<<"plot 'HistoX.txt' u 1:2 smooth freq with Boxes,'Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
+
+	// Histograma Y
+	cout<<"set term pdf"<<endl; 
+  cout<<"set out 'HistogramaMomento.pdf'"<<endl;
+	cout<<"set title 'Histograma del Momento'"<<endl;
+  cout<<"set ylabel 'Numero de particulas'"<<endl;
+	cout<<"set xlabel 'Momento Px'"<<endl;
+	cout<<"set autoscale"<<endl;
+	cout<<"set key"<<endl;
+	cout<<"set font ',7'"<<endl;
+	cout<<"plot 'HistoP.txt' u 1:2 smooth freq with Boxes,'Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
+	
   return 0;
 }
