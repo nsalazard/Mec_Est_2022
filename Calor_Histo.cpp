@@ -251,7 +251,7 @@ int main(void){
 			if(ii == 0){
 			ProbX = sqrt(2*M_PI*MResorte*KBT)*exp((-1)*pow( histox[jj],2)/(2*KBT/ KResorte ))/(HBAR*KBT*OmegaResorte);
 			ProbPx =sqrt(2*M_PI*KBT/KResorte)*exp((-1)*pow( histop[jj],2)/(2*MResorte*KBT))/(HBAR*KBT*OmegaResorte) ;
-			Prob << histox[jj]  << "\t" << countx << "\t" << histop[jj]  << "\t" << countp  << endl;
+			Prob << histox[jj]  << "\t" << ProbX << "\t" << histop[jj]  << "\t" << ProbPx  << endl;
 			}
 			if(histox[jj] >= xmin && histox[jj] < xmax){
 				countx += 1;
