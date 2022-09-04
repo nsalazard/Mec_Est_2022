@@ -278,6 +278,7 @@ int main(void){
   cout<<"set ylabel 'Numero de particulas'"<<endl;
 	cout<<"set xlabel 'Posicion x'"<<endl;
 	cout<<"set autoscale"<<endl;
+	cout<<"set xrange ["<<-15<<":"<<15<<"]"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
 	cout<<"plot 'HistoX.txt' u 1:2 with impulses t '','Prob.txt' u 1:2 w p t 'Distribucion marginal P(x)'"<<endl;
@@ -289,6 +290,7 @@ int main(void){
   cout<<"set ylabel 'Numero de particulas'"<<endl;
 	cout<<"set xlabel 'Momento Px'"<<endl;
 	cout<<"set autoscale"<<endl;
+	cout<<"set xrange ["<<-15<<":"<<15<<"]"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
 	cout<<"plot 'HistoP.txt' u 1:2 with impulses t '','Prob.txt' u 3:4 w p t 'Distribucion marginal P(p)'"<<endl;
