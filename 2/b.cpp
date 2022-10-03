@@ -234,7 +234,7 @@ int main(){
 			if(*it >= vmin && *it < vmax){countv += 1;}
 			Prob << *it <<"\t"<< sqrt(2/M_PI)*pow(1/51.02, 1.5)*pow(*it, 2)*exp((-1)*pow(*it,2)/(2*51.02))<< "\n";
 				}
-		HistoV << (vmin+vmax)/2 << "\t" << countv/2595 << "\n";
+		HistoV << (vmin+vmax)/2 << "\t" << countv/2595.0 << "\n";
 	}
 	HistoV.close();
 	Prob.close();
