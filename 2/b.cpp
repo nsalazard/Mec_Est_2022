@@ -129,13 +129,14 @@ void GraficaV(void){
 	cout<<"set title 'Histograma de V'"<<endl;
   cout<<"set ylabel 'Numero de particulas'"<<endl;
 	cout<<"set xlabel 'V'"<<endl;
-	cout<<"set autoscale"<<endl;
 	cout<<"set key"<<endl;
 	cout<<"set font ',7'"<<endl;
+	cout<<"set xrange[0.0:20.0]"<<endl;
 	//cout<<"gauss(x)=a/(sigma*sqrt(2.*pi))*exp(-(x-mu)**2./(2.*sigma**2))"<<endl;
 	//cout<<"fit gauss(x) 'HistoVN.txt' via a, sigma, mu"<<endl;
 	cout<<"plot 'HistoVN.txt' u 1:2   with impulses t 'Datos', 'Prob.txt' u 1:2 w l t 'Valor teorico'"<<endl;
 	//gauss(x) t 'Ajuste gaussiano',
+	//cout<<"set autoscale"<<endl;
 }
 
 // -----------------Main-------------------------------
@@ -234,7 +235,7 @@ int main(){
 			if(*it >= vmin && *it < vmax){countv += 1;}
 			Prob << *it <<"\t"<< sqrt(2/M_PI)*pow(1/51.02, 1.5)*pow(*it, 2)*exp((-1)*pow(*it,2)/(2*51.02))<< "\n";
 				}
-		HistoV << (vmin+vmax)/2 << "\t" << countv/2595.0 << "\n";
+		HistoV << (vmin+vmax)/2 << "\t" << countv/(2595.0*10) << "\n";
 	}
 	HistoV.close();
 	Prob.close();
